@@ -6,7 +6,7 @@ with open("README.md", "r") as f:
 
 setuptools.setup(
     name='weather',
-    version='0.1',
+    version='0.2',
     author='Lorenzo Bunino',
     author_email="bunino.lorenzo@gmail.com",
     description="Analyze a month\'s worth of weather data, provide insights",
