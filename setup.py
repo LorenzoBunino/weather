@@ -1,12 +1,16 @@
 import setuptools
 
+with open("README.md", "r") as f:
+    long_description = f.read()
+
 
 setuptools.setup(
     name='weather',
     version='0.1',
     author='Lorenzo Bunino',
     author_email="bunino.lorenzo@gmail.com",
-    description="B2B automation for music stores",
+    description="Analyze a month\'s worth of weather data, provide insights",
+    long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/lorenzobunino/weather",
     packages=setuptools.find_packages(),
