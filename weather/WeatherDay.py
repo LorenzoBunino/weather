@@ -8,7 +8,7 @@ class IllegalWeatherDay(Exception):
 
 
 class WeatherDay(datetime.date):
-    def __new__(cls, year, month, day, max_t, min_t):  # overridden because datetime.date is immutable
+    def __new__(cls, year, month, day: str, max_t, min_t):  # overridden because datetime.date is immutable
         day = int(day)
         self = super().__new__(cls, year, month, day)  # raises ValueError on illegal date; wrap in IllegalWeatherDay?
         self.max_t = WeatherDay.__atoi(max_t)
@@ -29,7 +29,7 @@ class WeatherDay(datetime.date):
             raise IllegalWeatherDay('Max temperature ' + str(max_t) + ' is lower than min temp ' + str(min_t))
 
     @staticmethod
-    def __stripastherisc(literal):  # "*" indicates month absolute max/min, unused in this program as of now
+    def __stripastherisc(literal):  # "*" indicates month absolute max/min, unused data in this program as of now
         return literal.replace('*', '')
 
     def getexcursion(self):
